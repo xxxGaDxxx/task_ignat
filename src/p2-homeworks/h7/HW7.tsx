@@ -12,7 +12,6 @@ function HW7() {
         <div>
             <hr/>
             homeworks 7
-
             {/*should work (должно работать)*/}
             <div>
                 <SuperSelect
@@ -31,6 +30,7 @@ function HW7() {
             </div>
 
             <hr/>
+            сам не смог решить пока разбор не посмотрел (забыл про 4 задание , что можно было там подсмотреть не много)
             {/*для личного творчества, могу проверить*/}
             {/*<AlternativeSuperSelect/>*/}
             {/*<AlternativeSuperRadio/>*/}
