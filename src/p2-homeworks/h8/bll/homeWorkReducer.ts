@@ -10,7 +10,7 @@ export const homeWorkReducer = (state: UserType[], action: PropsType): UserType[
         case 'sort': {
             debugger
             return (
-                action.payload === 'up'
+                action.payload === 'up' || action.payload === 'down'
                     ? [...state.sort((a, b) => a.name < b.name ? -1 : 1)]
                     : [...state.sort((a, b) => a.name < b.name ? -1 : 1).reverse()]
             )

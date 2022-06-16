@@ -5,7 +5,7 @@ export const homeWorkReducer2 = (state: UserType[], action: UserReducetType): Us
     switch (action.type) {
         case 'sort': {
             return (
-                action.payload.upDown === 'up'
+                action.payload.upDown === 'up' || action.payload.upDown === 'down'
                     ? [...state.sort((a, b) => a.name < b.name ? -1 : 1)]
                     : [...state.sort((a, b) => a.name < b.name ? -1 : 1).reverse()]
             )
