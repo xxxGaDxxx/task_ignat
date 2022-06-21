@@ -1,9 +1,6 @@
 import {UserType} from '../HW8';
 
-type PropsType = {
-    type: string
-    payload: string | number
-}
+type PropsType = {type:'sort', payload: 'up' | 'down'} | {type:'check', payload: number}
 
 export const homeWorkReducer = (state: UserType[], action: PropsType): UserType[] => { // need to fix any
     switch (action.type) {
