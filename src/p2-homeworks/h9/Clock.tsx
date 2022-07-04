@@ -5,7 +5,7 @@ function Clock() {
     const [timerId, setTimerId] = useState<number>(0)
     const [date, setDate] = useState<Date>(new Date())
     const [show, setShow] = useState<boolean>(false)
-    console.log(timerId)
+    /*console.log(timerId)*/
 
     const stop = () => {
         clearInterval(timerId)
