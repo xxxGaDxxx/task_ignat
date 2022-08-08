@@ -8,7 +8,7 @@ const initState: InitStatebType = {
 
 export const loadingReducer = (state = initState, action: LoadingACType): InitStatebType => { // fix any
     switch (action.type) {
-        case 'LOADING-TIME':{
+        case 'LOADING-TIME': {
             return {
                 isolation: action.loading
             }
@@ -20,9 +20,9 @@ export const loadingReducer = (state = initState, action: LoadingACType): InitSt
 
 export type LoadingACType = ReturnType<typeof loadingAC>
 
-export const loadingAC = (loading: boolean)=> {
+export const loadingAC = (loading: boolean) => {
     return {
         type: 'LOADING-TIME',
         loading
-    }
+    } as const
 } // fix any
