@@ -9,7 +9,6 @@ export type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLIn
 type SuperRangePropsType = DefaultInputPropsType & { // и + ещё пропсы которых нет в стандартном инпуте
     onChangeRange?: (value: number) => void
     setValue1: Dispatch<SetStateAction<number>>
-    max: number
     value: number
 };
 
@@ -38,16 +37,6 @@ export const SuperRange: React.FC<SuperRangePropsType> = (
                     valueLabelDisplay="auto"
                 />
             </Box>
-
-            {/*<input*/}
-            {/*    type={'range'}*/}
-            {/*    onChange={onChangeCallback}*/}
-            {/*    className={finalRangeClassName}*/}
-            {/*    value={value}*/}
-            {/*    max={max}*/}
-
-            {/*    {...restProps} // отдаём инпуту остальные пропсы если они есть (value например там внутри)*/}
-            {/*/>*/}
         </>
     )
 }

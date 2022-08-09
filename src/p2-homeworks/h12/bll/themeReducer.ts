@@ -1,4 +1,4 @@
-export type InitState = 'dark' | 'red' | 'some'
+export type InitState = 'dark' | 'red' | 'some' | 'retro'
 
 export type InitStateType = {
     theme: InitState
@@ -9,10 +9,10 @@ const initState: InitStateType = {
 
 export const themeReducer = (state = initState, action: ChangeThemeCType): InitStateType => { // fix any
     switch (action.type) {
-        case 'NEW-THEMES': {
+        case 'NEW-THEME': {
             return {
                 ...state,
-                theme:action.payload.value
+                theme: action.payload.value
             }
         }
         default:
@@ -24,7 +24,7 @@ type ChangeThemeCType = ReturnType<typeof changeThemeC>
 
 export const changeThemeC = (value: InitState) => {
     return {
-        type: 'NEW-THEMES',
+        type: 'NEW-THEME',
         payload: {
             value
         }

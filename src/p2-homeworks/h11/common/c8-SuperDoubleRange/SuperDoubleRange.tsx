@@ -1,22 +1,22 @@
-import React, { Dispatch, SetStateAction} from 'react'
+import React, {Dispatch, SetStateAction} from 'react'
 import {DefaultInputPropsType} from '../c7-SuperRange/SuperRange';
 import {Box, Slider} from '@mui/material';
 
 
 type SuperDoubleRangePropsType = DefaultInputPropsType & {
-    onChangeRange?: (value:   number[]) => void
+    onChangeRange?: (value: number[]) => void
     value: number[]
     setValue1: Dispatch<SetStateAction<number>>
     setValue2: Dispatch<SetStateAction<number[]>>
-     min:number
-    max:number
+    min: number
+    max: number
     //step, disable, ...
 }
 
 const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
     {
         onChangeRange, type, onChange, className, value,
-         min, max,// step, disable,
+        min, max,// step, disable,
         ...restProps
     }
 ) => {
@@ -29,28 +29,31 @@ const SuperDoubleRange: React.FC<SuperDoubleRangePropsType> = (
         return `${value}`;
     }
 
-    const handleChange = (event: Event, newValue: number | number[],activeThumb: number,) => {
-        if (!Array.isArray(newValue)) {
-            return;
-        }
-        if (activeThumb === 0) {
-            onChangeRange && onChangeRange([Math.min(newValue[0], value[1] - minDistance), value[1]]);
-        } else {
-            onChangeRange && onChangeRange([value[0], Math.max(newValue[1], value[0] + minDistance)]);
-        }
-
+    // const handleChange = (event: Event, newValue: number | number[], activeThumb: number,) => {
+    //     if (!Array.isArray(newValue)) {
+    //         return;
+    //     }
+    //     if (activeThumb === 0) {
+    //         onChangeRange && onChangeRange([Math.min(newValue[0], value[1] - minDistance), value[1]]);
+    //     } else {
+    //         onChangeRange && onChangeRange([value[0], Math.max(newValue[1], value[0] + minDistance)]);
+    //     }
+    //
+    // };
+    const handleChange = (event: Event, newValue: number | number[]) => {
+        onChangeRange && onChangeRange(newValue as number[]);
     };
 
     return (
         <>
 
-            <Box  sx={{width: 300}}>
+            <Box sx={{width: 300}}>
                 <Slider
                     getAriaLabel={() => 'Temperature range'}
                     value={value}
                     onChange={handleChange}
                     valueLabelDisplay="auto"
-                    getAriaValueText={valuetext}
+                    // getAriaValueText={valuetext}
                 />
             </Box>
         </>

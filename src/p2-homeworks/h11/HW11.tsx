@@ -33,7 +33,6 @@ function HW11() {
                     setValue1={setValue1}
                     onChangeRange={onChangeRange1}
                     value={value1}
-                    max={value2[1]}
                     // сделать так чтоб value1 изменялось
                 />
             </div>
