@@ -19,7 +19,6 @@ const initialPeople: UserType[] = [
     {_id: 4, name: 'Дмитрий', age: 40},
     {_id: 5, name: 'Ирина', age: 55},
 ]
-console.log(initialPeople)
 
 function HW8() {
     const [people, setPeople] = useState<UserType[]>(initialPeople) // need to fix any
